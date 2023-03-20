@@ -1,45 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Set the page title -->
-    <title>Assignment 03</title>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>to do app</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Poppins&display=swap" rel="stylesheet">
+<script defer src="main.js"></script>
+<body>
+    <div class="title">
+        <h3>your handy to do list!</h3>
+    </div>
+    <div class="subtitle">
+        <h3>a simple, day to day tool for self organization</h3>
+    </div>
 
-    <!-- Set the charset we're using to UTF-8 -->
-    <meta charset="UTF-8" />
+    <div class="all-list-items">
 
-    <!-- Set the screens default zoom / scale to 1 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <div class="all-todolists-header">
+            <h2>my to-do lists!</h2>
+        </div>
+        <ul class="tlist" data-lists>
+            <li class="listtitle active-list">personal</li>
+            <li class="listtitle">work</li>
+        </ul>
 
-    <!-- We are using a CSS Reset file to standardize browser default css -->
-    <link rel="stylesheet" href="reset.css" />
+        <form action="" data-new-list-form >
+            <input type="text" class="addlist" data-new-list-input placeholder="add new list" aria-label="add new list"/>
+            <button class="addnewlist" aria-label="add new list">add</button>
+        </form>
 
-    <!-- This is where all of our awesome CSS code goes -->
-    <link rel="stylesheet" href="style.css" />
+    </div>
 
-    <!-- Set the Favicon  -->
-    <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
-  </head>
-  <body>
-    <!--
+    <div class="todolist" data-list-display-container>
+        <div class="todotitle">
+            <h2 class="todotitlesty" data-list-title>personal</h2>
+            <p class="numberoftasks" data-list-count>only 2 more tasks to complete!</p>
+        </div>
 
-      ADD YOUR ASSIGNMENT 03 CODE
+        <div class="todotasks">
+            <div class="currenttasks" data-tasks>
+                <!--<div class="currenttask">
+                    <input type="checkbox" id="firsttask"/>
+                    <label for="firsttask"><span class="cbox"></span>finish web dev assignment</label>
+                </div>
 
-      YOU MAY REMOVE THE BOILERPLATE CODE BELOW
+                <div class="currenttask">
+                    <input type="checkbox" id="secondtask"/>
+                    <label for="secondtask"><span class="cbox"></span>clean my room</label>
+                </div>
+                -->
+            </div>
+            <div class="newtask">
+                <form action="" data-new-task-form>
+                    <input type="text" data-new-task-input class="addtask" placeholder="add new task" aria-label="add new task"/>
+                    <button type="submit" class="addnewtask" aria-label="add new task">add</button>
+                </form>
+            </div>
+            <div class="deletetask">
+                <button class="deletetask" data-clear-complete-tasks-button>remove finished tasks</button>
+                <button class="deletetask" data-delete-list-button>delete task list</button>
 
-      IMPORTANT CHECKLIST:
+            </div>
+        </div>
 
-      - Are users able to create and delete to do list items?
-      - Have you set a favicon? (included - but it's a rocket)
-      - Do you have a css reset file? (included)
-      - Has a team member conducted a code review and left a GitHub Issue in your repo?
-      - Have you conducted a code review and left a GitHub Issue on your team member's repo?
-
-    -->
-    <main>
-      <div id="app"></div>
-    </main>
-
-    <!-- This is where we add our awesome JavaScript code -->
-    <script src="./main.js"></script>
-  </body>
+    </div>
+    <template id="task-template">
+        <div class="currenttask">
+            <input type="checkbox">
+            <label><span class="cbox"></label>
+        </div>
+    </template>
+</body>
 </html>
